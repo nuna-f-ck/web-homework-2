@@ -24,46 +24,6 @@ export function quoteComment(userName, commentText) {
     commentInput.selectionEnd = commentInput.value.length
 }
 
-// // Обработчик клика на кнопку отправки комментария
-// export function createComment() {
-//     buttonForm.addEventListener('click', () => {
-//         if (nameInput.value === '' || commentInput.value === '') {
-//             alert('Заполни все поля')
-//             return
-//         }
-
-//         const now = new Date()
-//         const dateStr = `${now.getDate().toString().padStart(2, '0')}.${(now.getMonth() + 1).toString().padStart(2, '0')}.${now.getFullYear().toString().slice(-2)} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`
-
-//         // Экранируем данные перед сохранением
-//         const safeUserName = escapeHtml(nameInput.value)
-//         const safeCommentText = commentInput.value
-
-//         const newComment = {
-//             userName: safeUserName,
-//             time: dateStr,
-//             commentText: safeCommentText,
-//             likes: 0,
-//             isLiked: false,
-//         }
-
-//         fetch('https://wedev-api.sky.pro/api/v1/gleb-fokin/comments', {
-//             method: 'POST',
-//             body: JSON.stringify(newComment)
-//         }).then((resopnse) => {
-//             return resopnse.json()
-//         }).then((formattedComments) => {
-//             updateComments(formattedComments);
-//             renderComments(commentsList);
-//         })
-
-
-//         nameInput.value = ''
-//         commentInput.value = ''
-//         console.log('комментарий отправили')
-//     })
-// }
-
 export function createComment() {
     buttonForm.addEventListener('click', () => {
         if (nameInput.value === '' || commentInput.value === '') {
